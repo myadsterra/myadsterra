@@ -1,28 +1,78 @@
 <!DOCTYPE html>
-<script>
-    // Daftar URL tujuan
-    const urls = [
-        "https://sonsstoop.com/bu4yt8k728?key=f8db104846daabb29659eba90d75f9b9",
-        "https://sonsstoop.com/h0mhh2em?key=0edddc0aabc42f37306842d9c45ef3b5",
-        "https://sonsstoop.com/yfu3wn7e08?key=76ccfc1447d3f06fbf248948a0cf9857",
-        "https://sonsstoop.com/wuz2ycy2hd?key=6cb397c02338266edc760676412def80",
-        "https://sonsstoop.com/pcrkzxv0?key=1dc172fc059d2093963ec07d01887fc2",
-        "https://sonsstoop.com/uww3f6y5bf?key=fc46e1337d0fa85170a0ee60263faec0",
-        "https://sonsstoop.com/cg8cx7392?key=345dfba58acdd6612d4f0f23bbe6b938",
-        "https://sonsstoop.com/rcusm1uvd?key=751864797dabe9cbde103536b9742dd9",
-        "https://sonsstoop.com/kexs4ms8g0?key=d46573306dba112b6623770d750013d7",
-        "https://sonsstoop.com/xfg2bhat?key=050a7415eb072cd11341e64286e168c8",
-        "https://tesblog911.blogspot.com"
-    ];
-
-    // Eksekusi redirect secepat mungkin
-    window.location.replace(urls[Math.floor(Math.random() * urls.length)]);
-</script>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Redirecting...</title>
+<meta charset="UTF-8">
+<title>Lanjutkan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+.box {
+    background: #020617;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 400px;
+}
+button {
+    background: #22c55e;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+button:disabled {
+    background: #555;
+}
+</style>
 </head>
+
 <body>
+
+<div class="box">
+    <h2>🔗 Lanjutkan ke Tujuan</h2>
+    <p>Klik tombol di bawah untuk melanjutkan</p>
+    <button id="goBtn">LANJUTKAN</button>
+    <p id="status" style="margin-top:15px;font-size:14px;"></p>
+</div>
+
+<script>
+const urls = [
+    "https://sonsstoop.com/bu4yt8k728?key=f8db104846daabb29659eba90d75f9b9",
+    "https://sonsstoop.com/h0mhh2em?key=0edddc0aabc42f37306842d9c45ef3b5",
+    "https://sonsstoop.com/yfu3wn7e08?key=76ccfc1447d3f06fbf248948a0cf9857",
+    "https://sonsstoop.com/wuz2ycy2hd?key=6cb397c02338266edc760676412def80",
+    "https://sonsstoop.com/pcrkzxv0?key=1dc172fc059d2093963ec07d01887fc2",
+    "https://sonsstoop.com/uww3f6y5bf?key=fc46e1337d0fa85170a0ee60263faec0",
+    "https://sonsstoop.com/cg8cx7392?key=345dfba58acdd6612d4f0f23bbe6b938",
+    "https://sonsstoop.com/rcusm1uvd?key=751864797dabe9cbde103536b9742dd9",
+    "https://sonsstoop.com/kexs4ms8g0?key=d46573306dba112b6623770d750013d7",
+    "https://sonsstoop.com/xfg2bhat?key=050a7415eb072cd11341e64286e168c8",
+    "https://tesblog911.blogspot.com"
+];
+
+document.getElementById("goBtn").addEventListener("click", function () {
+    this.disabled = true;
+    document.getElementById("status").innerText = "Memproses...";
+
+    // delay natural 1–2 detik
+    const delay = Math.floor(Math.random() * 1000) + 1000;
+
+    setTimeout(() => {
+        const target = urls[Math.floor(Math.random() * urls.length)];
+        window.location.href = target;
+    }, delay);
+});
+</script>
+
 </body>
 </html>
